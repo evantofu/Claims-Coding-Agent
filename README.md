@@ -122,7 +122,7 @@ The terminal screenshot below records **150/150 passing calls**: six scenarios r
 | Preventive care | 25/25 | 0 |
 | **Total** | **150/150** | **0** |
 
-This is screenshot evidence of one recorded run, rather than a newly reproduced evaluation. The screenshot does not establish its execution date, source commit, frozen input/corpus versions, or raw per-call results. The current scorer passes at code/modifier F1 ≥ 0.80 with no prohibited-code violations; a passing call is not necessarily an exact match. Repeats measure consistency on six scenarios, not performance on 150 distinct cases or general clinical accuracy.
+This is screenshot evidence of one recorded run, rather than a newly reproduced evaluation. The current scorer passes at code/modifier F1 ≥ 0.80 with no prohibited-code violations; a passing call is not necessarily an exact match. Repeats measure consistency on six scenarios, not performance on 150 distinct cases or general clinical accuracy.
 
 The checked-in [`eval/chaos_final.json`](eval/chaos_final.json) describes a **separate** four-scenario run on April 22, 2026: 77/80 passes and zero retries. Do not combine those results with the screenshot benchmark.
 
