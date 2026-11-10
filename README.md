@@ -106,6 +106,26 @@ Six golden-case files cover preventive visits, Medicare wellness, pediatric care
 
 Historical reports in the repository cover different versions and case sets. They should not be treated as a current score or evidence of general clinical accuracy. See [Development and Evaluation](docs/DEVELOPMENT.md) to configure the live dependencies and regenerate results.
 
+### Recorded repeated-run benchmark
+
+The terminal screenshot below records **150/150 passing calls**: six scenarios run 25 times each, with **zero flakes, infrastructure failures, logic/parse failures, or infrastructure retries**.
+
+![Terminal output showing six claims-agent scenarios passing 25 out of 25 calls each, 150 out of 150 overall, with zero retries](docs/claims-agent-150-call-benchmark.png)
+
+| Scenario | Passing calls | Retries |
+|---|---:|---:|
+| Asthma | 25/25 | 0 |
+| Medicare wellness | 25/25 | 0 |
+| Wrong-code correction | 25/25 | 0 |
+| Pediatric care | 25/25 | 0 |
+| Chronic care | 25/25 | 0 |
+| Preventive care | 25/25 | 0 |
+| **Total** | **150/150** | **0** |
+
+This is screenshot evidence of one recorded run, rather than a newly reproduced evaluation. The screenshot does not establish its execution date, source commit, frozen input/corpus versions, or raw per-call results. The current scorer passes at code/modifier F1 ≥ 0.80 with no prohibited-code violations; a passing call is not necessarily an exact match. Repeats measure consistency on six scenarios, not performance on 150 distinct cases or general clinical accuracy.
+
+The checked-in [`eval/chaos_final.json`](eval/chaos_final.json) describes a **separate** four-scenario run on April 22, 2026: 77/80 passes and zero retries. Do not combine those results with the screenshot benchmark.
+
 ## Troubleshooting
 
 - **401 Unauthorized:** set `API_KEYS` and send a matching `X-API-Key` header.
